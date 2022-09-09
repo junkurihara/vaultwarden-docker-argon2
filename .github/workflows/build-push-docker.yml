@@ -18,7 +18,7 @@ jobs:
         with:
           repository: 'junkurihara/vaultwarden'
           path: './'
-          ref: '2a81131dee14413f0391fcfee3b9ce95eac0953f'
+          ref: '17618dc788bc68079104c587705e8fadef60c5d7'
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
