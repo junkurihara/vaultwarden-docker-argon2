@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  vaultwarden:
+    image: jqtype/vaultwarden-argon2:latest
+    container_name: vaultwarden
+    expose: # expose is used with reverse proxy. use ports for port forwarding directly to this container.
+      - '80'
+      - '3012'
+    volumes:
+      - ./vw-data:/data
+    restart: unless-stopped
+    env_file: .env # same as the original
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    command: /bin/sh -c "/bin/bash /start.sh"
+
